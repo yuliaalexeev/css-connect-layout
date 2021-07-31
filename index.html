@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="connection flex column">
+          <div class="connection-actions flex space-between">
+            <a class="connection-actions-back" href="#"></a>
+            <div class="connection-actions-bullets">
+              <span class="connection-actions-bullets-dot current"></span>
+              <span class="connection-actions-bullets-dot"></span>
+              <span class="connection-actions-bullets-dot"></span>
+            </div>
+
+          </div>
+          <form class="connection-form flex column flex-grow">
+            <div class="connection-form-inner flex-grow">
+              <h2 class="primary-title">התחברות</h2>
+              <p class="connection-description">כדי לצפות בכל המידע האישי שלך</p>
+              
+              <div class="connection-form-inner-field">
+                <input class="connection-form-inner-field-input" type="tel" maxlength="9" id="id-number" required>
+                <label class="connection-form-inner-field-label" for="id-number">מספר תעודת זהות</label>
+              </div>
+              
+              <div class="connection-form-inner-field">
+                <input class="connection-form-inner-field-input" type="tel" maxlength="10" id="phone-number" required>
+                <label class="connection-form-inner-field-label" for="phone-number">מספר טלפון</label>
+              </div>
+            </div>
+
+            <div class="connection-form-button">
+              <button class="connection-form-button-btn" type="submit">התחברות</button>
+            </div>
+          </form>
+      </div>
+      <div class="side">
+        <img src="images/bags.svg" alt="bags" />
+      </div>
+    </div>
+  </body>
+  <script src="js/site.js"></script>
+</html>

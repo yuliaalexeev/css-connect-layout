@@ -1,0 +1,43 @@
+.wrapper {
+  height: 100%;
+  @include for-narrow-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+  @include for-wide-layout{
+    padding: 0 18%;
+  }
+  @include for-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.passengers {
+      flex-direction: column-reverse;
+    }
+  }
+  
+}
+
+.primary-title {
+  font-size: 2.5rem;
+  color: $clr1;
+}
+
+.secondary-title {
+  font-size: rem(28px);
+  color: $clr8;
+  font-family: AssistantSemiBold;
+  @include for-mobile-layout {
+    font-size: rem(25px);
+  }
+}
+
+.tertiary-title {
+  font-size: rem(28px);
+  font-weight: bold;
+  margin-bottom: 22px;
+  @include for-mobile-layout {
+    font-size: rem(24px);
+  }
+}

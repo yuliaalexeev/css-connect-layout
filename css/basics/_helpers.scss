@@ -1,0 +1,17 @@
+// Flex 
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex-grow{
+  flex-grow: 1;
+}

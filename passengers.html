@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passengers</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper passengers">
+      <div class="connection flex column">
+        <div class="connection-actions flex space-between">
+          <a class="connection-actions-back" href="#"></a>
+          <div class="connection-actions-bullets">
+            <span class="connection-actions-bullets-dot"></span>
+            <span class="connection-actions-bullets-dot"></span>
+            <span class="connection-actions-bullets-dot current"></span>
+          </div>
+        </div>
+        <form class="connection-form flex column flex-grow">
+          <div class="connection-form-inner flex-grow">
+            <h4 class="tertiary-title">שלום רועי!</h4>
+            <p class="connection-description">
+              מי הנוסעים שמצטרפים אליך? <br />
+              בהמשך אפשר להוסיף נוסעים נוספים
+            </p>
+
+            <div class="checkboxes">
+              <div class="connection-form-checkbox">
+                <label
+                  >רועי לוי
+                  <input type="checkbox" checked="checked" />
+                  <span class="connection-form-checkbox-checkmark"></span>
+                </label>
+              </div>
+  
+              <div class="connection-form-checkbox">
+                <label
+                  >דנה ברגר
+                  <input type="checkbox" />
+                  <span class="connection-form-checkbox-checkmark"></span>
+                </label>
+              </div>
+  
+              <div class="connection-form-checkbox">
+                <label
+                  >דודו שילוח
+                  <input type="checkbox" />
+                  <span class="connection-form-checkbox-checkmark"></span>
+                </label>
+              </div>
+  
+              <div class="connection-form-checkbox">
+                <label
+                  >יפעת רשף
+                  <input type="checkbox" />
+                  <span class="connection-form-checkbox-checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="connection-form-button">
+            <button class="connection-form-button-btn" type="submit">
+              המשך
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="side">
+        <img src="images/bags.svg" alt="bags" />
+      </div>
+    </div>
+  </body>
+  <script src="js/site.js"></script>
+</html>

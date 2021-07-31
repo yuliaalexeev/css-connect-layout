@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sms</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="connection flex column">
+        <div class="connection-actions flex space-between">
+          <a class="connection-actions-back" href="#"></a>
+          <div class="connection-actions-bullets">
+            <span class="connection-actions-bullets-dot"></span>
+            <span class="connection-actions-bullets-dot current"></span>
+            <span class="connection-actions-bullets-dot"></span>
+          </div>
+        </div>
+        <form class="connection-form flex column flex-grow">
+          <div class="connection-form-inner flex-grow">
+            <h3 class="secondary-title">שלחנו לך SMS עם קוד חד פעמי</h3>
+            <p class="connection-description">מה הקוד שקיבלת?</p>
+
+            <input type="tel" class="sms-number" maxlength="6" />
+            <a href="#">לא קיבלתי קוד</a>
+          </div>
+
+          <div class="connection-form-button">
+            <button class="connection-form-button-btn" type="submit">
+              המשך
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="side">
+        <img src="images/bags.svg" alt="bags" />
+      </div>
+    </div>
+  </body>
+  <script src="js/site.js"></script>
+</html>

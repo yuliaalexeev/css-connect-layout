@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Assistant, sans-serif;
+  height: 100%;
+  color: $clr1;
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  background-color: $clr7;
+  background-image: url('../images/bg.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: Assistant;
+  font-weight: normal;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: $clr9;
+  font-size: rem(15px);
+  font-family: AssistantSemiBold;
+}
+
+input{
+  outline: 0;
+  padding: 0;
+}
