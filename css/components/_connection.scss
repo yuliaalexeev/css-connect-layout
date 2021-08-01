@@ -64,6 +64,9 @@
         font-size: rem(25px);
         margin: 0 0 47px;
         border-bottom: 1px solid rgba(27, 38, 182, 0.3); //Hex #2F49A6
+        @include for-mobile-layout {
+          margin: 40px 0 0;
+        }
         &-input {
           height: 100%;
           width: 100%;
@@ -71,11 +74,15 @@
           color: $clr2;
           font-size: rem(20px);
           background: none;
+          &:not(:focus):valid ~ label,
           &:focus ~ label {
             transform: translateY(-20px);
             font-size: rem(16px);
             color: $clr2;
             opacity: 0.55;
+            @include for-mobile-layout {
+              font-size: rem(14px);
+            }
           }
         }
         &-label {
@@ -93,8 +100,8 @@
     &-button {
       @include for-narrow-layout {
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+        padding: 30px 90px;
       }
-      padding: 30px 90px;
       &-btn {
         border-radius: 24px;
         background-color: $clr2;
@@ -112,5 +119,3 @@
     }
   }
 }
-
-

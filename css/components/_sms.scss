@@ -9,4 +9,8 @@
   font-size: rem(20px);
   display: block;
   margin: 50px auto 13px;
+  @include for-mobile-layout {
+    width: 100%;
+    margin-top: 30px;
+  }
 }
