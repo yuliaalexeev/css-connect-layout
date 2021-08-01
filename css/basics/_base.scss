@@ -11,12 +11,13 @@ html {
 
 body {
   margin: 0;
-  background-color: $clr7;
-  background-image: url('../images/bg.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
   height: 100%;
+  overflow: hidden;
+  background: $clr7 url('../images/bg.svg') no-repeat bottom;
+  background-size: contain;
+  @include for-mobile-layout {
+    background-size: 200%;
+  }
 }
 
 h1,
@@ -26,8 +27,6 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: Assistant;
-  font-weight: normal;
 }
 
 img {
@@ -38,14 +37,14 @@ button {
   cursor: pointer;
 }
 
-a{
+a {
   text-decoration: none;
   color: $clr9;
   font-size: rem(15px);
   font-family: AssistantSemiBold;
 }
 
-input{
+input {
   outline: 0;
   padding: 0;
 }

@@ -1,4 +1,4 @@
-// Flex 
+// Flex
 
 .flex {
   display: flex;
@@ -12,6 +12,10 @@
   flex-direction: column;
 }
 
-.flex-grow{
+.flex-grow {
   flex-grow: 1;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }

@@ -8,6 +8,11 @@
   src: url(/assets/fonts/Assistant/Assistant-SemiBold.ttf);
 }
 
+@font-face {
+  font-family: AssistantBold;
+  src: url(/assets/fonts/Assistant/Assistant-Bold.ttf);
+}
+
 /* Media queries Breakpoint mixins */
 .flex {
   display: -webkit-box;
@@ -34,6 +39,12 @@
           flex-grow: 1;
 }
 
+.flex-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -48,12 +59,16 @@ html {
 
 body {
   margin: 0;
-  background-color: #f1f4ff;
-  background-image: url("../images/bg.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
   height: 100%;
+  overflow: hidden;
+  background: #f1f4ff url("../images/bg.svg") no-repeat bottom;
+  background-size: contain;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-size: 200%;
+  }
 }
 
 h1,
@@ -63,8 +78,6 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-family: Assistant;
-  font-weight: normal;
 }
 
 img {
@@ -89,6 +102,8 @@ input {
 
 .wrapper {
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 767px) {
@@ -100,12 +115,6 @@ input {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0 5%;
-  }
-}
-
-@media (min-width: 1281px) {
-  .wrapper {
-    padding: 0 18%;
   }
 }
 
@@ -132,6 +141,7 @@ input {
 .primary-title {
   font-size: 2.5rem;
   color: #2f425a;
+  font-weight: normal;
 }
 
 .secondary-title {
@@ -158,13 +168,17 @@ input {
   }
 }
 
+.connection {
+  z-index: 1;
+}
+
 @media (min-width: 767px) {
   .connection {
     background: #ffffff;
     -webkit-box-shadow: 0 0 13px rgba(47, 73, 166, 0.1);
             box-shadow: 0 0 13px rgba(47, 73, 166, 0.1);
     max-width: 512px;
-    width: calc(60% - 30px);
+    width: 100%;
     border-radius: 24px 24px 0 0;
     margin-top: 82px;
   }
@@ -224,83 +238,9 @@ input {
   text-align: center;
 }
 
-.connection-form-checkbox {
-  display: inline-block;
-}
-
-.connection-form-checkbox label {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  display: block;
-  position: relative;
-  padding-right: 30px;
-  font-family: AssistantSemiBold;
-  cursor: pointer;
-  color: #2f425a;
-  margin: 27px 25px 3px 10px;
-}
-
-@media (max-width: 767px) {
-  .connection-form-checkbox label {
-    margin: 27px 12px 3px 10px;
-  }
-}
-
-.connection-form-checkbox label .connection-form-checkbox-checkmark:after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  left: 7px;
-  top: 3px;
-  width: 4px;
-  height: 8px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-}
-
-.connection-form-checkbox label input {
-  height: 0;
-  width: 0;
-  opacity: 0;
-  position: absolute;
-  cursor: pointer;
-}
-
-.connection-form-checkbox label input:checked ~ .connection-form-checkbox-checkmark {
-  background: #ff7e99 url("../images/check.png") no-repeat center;
-}
-
-.connection-form-checkbox label input:checked ~ .connection-form-checkbox-checkmark:after {
-  display: none;
-}
-
-.connection-form-checkbox-checkmark {
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: lightgray;
-  border-radius: 3px;
-  border: 2px solid #2f425a;
-}
-
-.connection-form-checkbox-checkmark:after {
-  content: '';
-  display: none;
-  position: absolute;
-}
-
-@media (min-width: 1200px) {
-  .connection-form-inner {
-    padding: 5.5rem 4.3rem 0 3.6rem;
-  }
-}
-
 @media (min-width: 767px) {
   .connection-form-inner {
-    padding: 5.5rem 1.6rem 0 1.6rem;
+    padding: 5.5rem 4.3rem 0 3.6rem;
     background: url("../images/connection-bg.png") center no-repeat;
   }
 }
@@ -315,7 +255,7 @@ input {
   height: 32px;
   width: 100%;
   position: relative;
-  font-size: 1.25rem;
+  font-size: 1.5625rem;
   margin: 0 0 47px;
   border-bottom: 1px solid rgba(27, 38, 182, 0.3);
 }
@@ -344,13 +284,13 @@ input {
   color: #1b26b6;
   opacity: 0.55;
   pointer-events: none;
+  font-size: 1.25rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .connection-form-button {
-  padding: 30px 0;
-  text-align: center;
+  padding: 30px 90px;
 }
 
 @media (min-width: 767px) {
@@ -378,8 +318,124 @@ input {
   }
 }
 
+.cloud {
+  z-index: 1;
+  position: absolute;
+}
+
+.cloud-1 {
+  background: url("../images/cloud-1.svg") no-repeat;
+  width: 46px;
+  height: 33px;
+  top: 60px;
+  -webkit-animation: movingClound 60s linear infinite;
+          animation: movingClound 60s linear infinite;
+}
+
+.cloud-2 {
+  background: url("../images/cloud-2.svg") no-repeat;
+  width: 58px;
+  height: 40px;
+  top: 180px;
+  -webkit-animation: movingClound 80s linear infinite;
+          animation: movingClound 80s linear infinite;
+}
+
+.cloud-3 {
+  background: url("../images/cloud-3.svg") no-repeat;
+  width: 99px;
+  height: 68px;
+  top: 350px;
+  -webkit-animation: movingClound 100s linear infinite;
+          animation: movingClound 100s linear infinite;
+}
+
+@-webkit-keyframes movingClound {
+  0% {
+    right: -100px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes movingClound {
+  0% {
+    right: -100px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.checkbox {
+  text-align: right;
+}
+
+.checkbox-option {
+  display: inline-block;
+}
+
+.checkbox-option label {
+  display: block;
+  position: relative;
+  padding-right: 30px;
+  font-family: AssistantSemiBold;
+  cursor: pointer;
+  color: #2f425a;
+  margin: 27px 25px 3px 10px;
+}
+
+@media (max-width: 767px) {
+  .checkbox-option label {
+    margin: 27px 12px 3px 10px;
+  }
+}
+
+.checkbox-option label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.checkbox-option label input:checked ~ .checkbox-option-checkmark {
+  background: #ff7e99 url("../images/check.png") no-repeat 2px 3px;
+}
+
+.checkbox-option-checkmark {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #e6edff;
+  border-radius: 3px;
+  border: 2px solid #2f425a;
+}
+
+.sms-number {
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #1b26b6;
+  color: #1b26b6;
+  background: rgba(213, 218, 255, 0.2);
+  height: 54px;
+  max-width: 310px;
+  font-size: 1.25rem;
+  display: block;
+  margin: 50px auto 13px;
+}
+
 .side {
-  margin: 252px 5% 0 10%;
+  z-index: 1;
+}
+
+@media (min-width: 767px) {
+  .side {
+    margin: 309px 5% 0 10%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -392,20 +448,46 @@ input {
   }
 }
 
-.sms-number {
+.welcome {
+  background: url("../images/welcome.svg") no-repeat;
+  background-size: 100%;
+  margin: 240px auto;
+  max-width: 495px;
+  height: 525px;
+  width: 100%;
   text-align: center;
-  border-radius: 4px;
-  border: 1px solid #1b26b6;
-  background: rgba(213, 218, 255, 0.4);
-  height: 54px;
-  max-width: 310px;
-  opacity: 0.4;
-  font-size: 1.25rem;
-  display: block;
-  margin: 50px auto 13px;
+  color: #2f425a;
 }
 
-.checkboxes {
-  text-align: right;
+@media (max-width: 767px) {
+  .welcome {
+    width: 290px;
+    height: 345px;
+  }
+}
+
+.welcome-title {
+  font-size: 3.4375rem;
+  font-family: AssistantBold;
+  margin-right: 60px;
+}
+
+@media (max-width: 767px) {
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+}
+
+.welcome-description {
+  font-size: 1.5625rem;
+  font-family: AssistantSemiBold;
+  opacity: 0.7;
+  margin: 0 60px 0 0;
+}
+
+@media (max-width: 767px) {
+  .welcome-description {
+    font-size: 1.125rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

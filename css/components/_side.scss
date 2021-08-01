@@ -1,0 +1,13 @@
+.side {
+  z-index: 1;
+  @include for-narrow-layout{
+    margin: 309px 5% 0 10%;
+  }
+  @include for-mobile-layout {
+    display: none;
+    .passengers & {
+      display: block;
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.checkbox {
+  text-align: right;
+  &-option {
+    display: inline-block;
+    label {
+      display: block;
+      position: relative;
+      padding-right: 30px;
+      font-family: AssistantSemiBold;
+      cursor: pointer;
+      color: $clr1;
+      margin: 27px 25px 3px 10px;
+      @include for-mobile-layout {
+        margin: 27px 12px 3px 10px;
+      }
+      input {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        position: absolute;
+        cursor: pointer;
+        &:checked ~ .checkbox-option-checkmark {
+          background: $clr4 url('../images/check.png') no-repeat 2px 3px;
+        }
+      }
+    }
+    &-checkmark {
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: $clr6;
+      border-radius: 3px;
+      border: 2px solid $clr1;
+    }
+  }
+}
